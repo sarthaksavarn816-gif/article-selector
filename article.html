@@ -1,8 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News Explorer</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            margin: 1.5rem;
+        }
+        .topics {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        .topic {
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #444;
+            border-radius: 0.5rem;
+            background: #f4f4f4;
+            cursor: pointer;
+        }
+        .topic:hover {
+            background: #eaeaea;
+        }
+        .news-item {
+            padding: 0.75rem;
+            border-bottom: 1px solid #ddd;
+        }
+        .news-item a {
+            text-decoration: none;
+            color: #0b69ff;
+            font-weight: 600;
+        }
+        #news-container {
+            max-width: 680px;
+        }
+    </style>
 </head>
 <body>
     <section class="topics" aria-label="Topics">
@@ -10,6 +45,10 @@
         <button class="topic" data-topic="javascript">JavaScript</button>
         <button class="topic" data-topic="startup">Startup</button>
         <button class="topic" data-topic="programming">Programming</button>
+    </section>
+
+    <section id="news-container" aria-live="polite">
+        <p>Select a topic above to load news.</p>
     </section>
 
     <script>
